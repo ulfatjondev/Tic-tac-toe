@@ -1,49 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uz">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>3x3 Quiz Tic-Tac-Toe — do'stim</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="wrap">
-    <header>
-      <h1>3×3 Quiz Tic-Tac-Toe</h1>
-      <p class="subtitle">Har yurishdan oldin savol — to‘g‘ri javob bersang katak senga, noto‘g‘ri bo‘lsa AI harakat qiladi.</p>
-    </header>
-
-    <main>
-      <div class="info">
-        <div>Navbat: <strong id="turn">X (Siz)</strong></div>
-        <div class="score">X: <span id="scoreX">0</span> — O (AI): <span id="scoreO">0</span> — Teng: <span id="scoreD">0</span></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>3x3 Quiz Tic-Tac-Toe — do'stim</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>3×3 Quiz Tic-Tac-Toe</h1>
+        <p class="subtitle">
+          Har yurishdan oldin savol — to‘g‘ri javob bersang katak senga,
+          noto‘g‘ri bo‘lsa AI harakat qiladi.
+        </p>
+      </header>
+      <audio id="bgMusic" src="music.mp3" loop></audio>
+      <div class="music-control">
+        <button id="musicBtn">🎵 Musiqa</button>
+        <input
+          id="musicVol"
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value="0.5"
+        />
       </div>
 
-      <div id="board" class="board" aria-label="tic tac toe board"></div>
-
-      <div class="controls">
-        <button id="restart">Yangi o‘yin</button>
-        <button id="resetScores">Hisoblarni tiklash</button>
-        <div id="message" class="message" aria-live="polite"></div>
-      </div>
-    </main>
-  </div>
-
-  <!-- Modal -->
-  <div id="quizModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal-content" role="document">
-      <h2 id="quizTitle">Savol</h2>
-      <p id="quizText"></p>
-      <form id="quizForm">
-        <div id="options"></div>
-        <div class="modal-actions">
-          <button type="submit" id="submitAnswer">Javobni tasdiqlash</button>
-          <button type="button" id="cancelAnswer" class="secondary">Bekor (javobsiz — navbat yo'qotiladi)</button>
+      <main>
+        <div class="info">
+          <div>Navbat: <strong id="turn">X (Siz)</strong></div>
+          <div class="score">
+            X: <span id="scoreX">0</span> — O (AI): <span id="scoreO">0</span> —
+            Teng: <span id="scoreD">0</span>
+          </div>
         </div>
-      </form>
-    </div>
-  </div>
 
-  <script src="script.js"></script>
-</body>
+        <div id="board" class="board" aria-label="tic tac toe board"></div>
+
+        <div class="controls">
+          <button id="restart">Yangi o‘yin</button>
+          <button id="resetScores">Hisoblarni tiklash</button>
+          <div id="message" class="message" aria-live="polite"></div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Modal -->
+    <div
+      id="quizModal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+    >
+      <div class="modal-content" role="document">
+        <h2 id="quizTitle">Savol</h2>
+        <p id="quizText"></p>
+        <form id="quizForm">
+          <div id="options"></div>
+          <div class="modal-actions">
+            <button type="submit" id="submitAnswer">Javobni tasdiqlash</button>
+            <button type="button" id="cancelAnswer" class="secondary">
+              Bekor (javobsiz — navbat yo'qotiladi)
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>

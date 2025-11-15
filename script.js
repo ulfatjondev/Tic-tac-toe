@@ -492,3 +492,26 @@
   initBoard();
   updateScores();
 })();
+
+// 🎵 Musiqa boshqaruvi
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+const musicVol = document.getElementById("musicVol");
+
+let isPlaying = false;
+
+musicBtn.addEventListener("click", () => {
+  if (!isPlaying) {
+    music.play();
+    isPlaying = true;
+    musicBtn.textContent = "⏸ Pauza";
+  } else {
+    music.pause();
+    isPlaying = false;
+    musicBtn.textContent = "🎵 Musiqa";
+  }
+});
+
+musicVol.addEventListener("input", () => {
+  music.volume = musicVol.value;
+});

@@ -95,3 +95,24 @@ button.secondary{color:var(--muted);border-color:rgba(159,176,200,0.06)}
   .cell{font-size:36px}
   .modal-content{padding:14px}
 }
+
+.music-control {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#musicBtn {
+  background: var(--accent);
+  color: #071129;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+#musicVol {
+  width: 90px;
+}
